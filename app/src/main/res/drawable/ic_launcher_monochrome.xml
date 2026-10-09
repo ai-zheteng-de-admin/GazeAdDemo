@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Android 13+ 主题化图标：单色版本（系统会统一着色） -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M24,35 L24,24 L35,24"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4.6" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M73,24 L84,24 L84,35"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4.6" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M24,73 L24,84 L35,84"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4.6" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M84,73 L84,84 L73,84"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4.6" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M26,54 C38,41.5 46,38 54,38 C62,38 70,41.5 82,54 C70,66.5 62,70 54,70 C46,70 38,66.5 26,54 Z"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4.2" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M54,42.0 A12.0,12.0 0 1,1 53.99,42.0 Z"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="3.0" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M51,49.4 L51,58.6 L59.1,54 Z" />
+</vector>

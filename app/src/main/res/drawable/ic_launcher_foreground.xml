@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 取景框四角：暗示“摄像头在跟踪” -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M24,35 L24,24 L35,24"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4.6" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M73,24 L84,24 L84,35"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4.6" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M24,73 L24,84 L35,84"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4.6" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M84,73 L84,84 L73,84"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4.6" />
+
+    <!-- 眼睛轮廓 -->
+    <path
+        android:fillColor="#1AFFFFFF"
+        android:pathData="M26,54 C38,41.5 46,38 54,38 C62,38 70,41.5 82,54 C70,66.5 62,70 54,70 C46,70 38,66.5 26,54 Z"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4.2" />
+
+    <!-- 虹膜（青色圆） -->
+    <path
+        android:fillColor="#FF00E5C8"
+        android:pathData="M54,41.4 A12.6,12.6 0 1,1 53.99,41.4 Z" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M54,42.6 A11.4,11.4 0 1,1 53.99,42.6 Z"
+        android:strokeColor="#FF0B1A2C"
+        android:strokeWidth="2.0" />
+
+    <!-- 瞳孔里的播放键：广告 + 观看 -->
+    <path
+        android:fillColor="#FF0B1A2C"
+        android:pathData="M51,49.4 L51,58.6 L59.1,54 Z" />
+    <!-- 高光 -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M49.2,46.9 A2.1,2.1 0 1,1 49.19,46.9 Z" />
+</vector>

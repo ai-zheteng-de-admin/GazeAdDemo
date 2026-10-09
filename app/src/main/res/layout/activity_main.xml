@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="眼球强制看广告"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:alpha="0.7"
+            android:text="实验 Demo · 本地视觉识别 · 不联网"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="4dp"
+            android:text="播放视频广告时，用前置摄像头 + MediaPipe 在本机实时分析人脸关键点、虹膜位置和头部姿态。视线一旦离开屏幕超过容忍时间，广告立即中断并从头开始，直到完整看完为止。"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="判定流程"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="4dp"
+            android:text="1. 锚点校准：开始前先注视屏幕中央 3 秒，记录你正对屏幕时的头部角度与虹膜位置，作为“专注锚点”。\n2. 实时比对：每帧计算当前姿态与锚点的偏差，超过容差并持续一段时间即判定为“离开”。\n3. 强制重看：中断 → 显示“请重新看广告” → 视线回到屏幕并稳定 1.2 秒后，广告从 0 秒重新播放。\n4. 活性校验：长时间不眨眼、检测到第二张人脸（替看）同样判违规。"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="观看设置"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="#14000000"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="① 开屏广告视频"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/videoSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/pickVideoButton"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="选择本地视频"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/resetVideoButton"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:text="恢复内置广告"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:alpha="0.6"
+                android:text="广告时长由所选视频决定：视频播完才算看完（视频只读取，不复制不改动）。"
+                android:textSize="11sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="#22000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="② 测试用摄像头预览"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- 注意：这里必须用 M2 的 SwitchMaterial。M3 的 MaterialSwitch 依赖
+                 ?attr/materialSwitchStyle（只有 Theme.Material3.* 才有），在本 App 的
+                 Theme.MaterialComponents 主题下会退化成 showText=true + 无 textOn/textOff，
+                 measure 阶段抛 NullPointerException 闪退。 -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/showPreviewSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="显示摄像头预览（调试用）"
+                android:textSize="13sp" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/mosaicPreviewSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="预览打马赛克"
+                android:textSize="13sp" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/showFacePointsSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="预览里叠加人脸关键点"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:alpha="0.6"
+                android:text="打马赛克和关键点都只作用于预览画面：送进 MediaPipe 做检测的始终是原始摄像头帧，不影响检测精度。开启关键点后预览改为自绘（约 12fps），普通预览是摄像头原生的 30fps。\n广告页里的预览小窗可以直接拖动改变位置（位置会被记住），轻点一下可临时隐藏/显示。"
+                android:textSize="11sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="#22000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="③ 广告页调试信息"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/showDebugHudSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="显示调试信息（帧率 / 头偏 / 虹膜 / 违规）"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:alpha="0.6"
+                android:text="关闭后广告页左上角的参数面板不再显示，强制观看流程与判定逻辑不受影响。"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="当前策略"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/policyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#14000000"
+            android:lineSpacingExtra="3dp"
+            android:padding="12dp"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="开始观看广告" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:alpha="0.6"
+            android:text="摄像头画面仅在设备内存中处理，不写入存储、不上传。Android 12+ 播放期间状态栏会显示摄像头使用中图标。"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>

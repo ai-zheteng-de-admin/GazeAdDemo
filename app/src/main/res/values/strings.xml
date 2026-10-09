@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">眼球强制看广告 - 实验 Demo</string>
+    <string name="camera_permission_denied">没有摄像头权限就无法做视线检测：本 Demo 完全依赖本地摄像头，画面不会上传。</string>
+    <string name="ad_restarted">视线已回到屏幕，广告从头重新播放</string>
+    <string name="ad_video_builtin">当前：内置示例广告（20 秒）</string>
+    <string name="preview_debug_desc">带调试叠加的摄像头预览</string>
+    <string name="preview_badge_mosaic">打马预览</string>
+    <string name="preview_badge_points">关键点预览</string>
+    <string name="preview_badge_mosaic_points">打马 + 关键点</string>
+    <string name="custom_video_failed">自定义视频无法播放，已回退到内置广告</string>
+    <string name="custom_video_ready">已设置自定义广告视频</string>
+    <string name="video_meta_reading">正在读取视频信息…</string>
+    <string name="ad_countdown_total">广告共 %1$d 秒</string>
+    <string name="ad_countdown_remaining">广告剩余 %1$d 秒</string>
+    <string name="ad_countdown_done">广告已播放完</string>
+</resources>
